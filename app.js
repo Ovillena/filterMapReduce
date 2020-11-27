@@ -13,9 +13,10 @@ const coffeeLovers = ["John Doe", "Liam Smith", "Jessy Pinkman"];
    in their object called coffeeLover, set either to true or false. (Use a function called addCoffeeLoverProperty)
 3. Get the total summed age of all people who are coffee lovers and above the age of 18 (Use a function called ageReducer)
 */
-const ageAbove18 = (person) => person.age >= 18;
+const ageAbove18 = (person) => person.age >= 18; //determines if the person is 18 or above
 
-const addCoffeeLoverProperty = (person) => { 
+const addCoffeeLoverProperty = (person) => {  
+  //adds a boolean on the person's obj on whether they are part of the coffeeLover array
   if(coffeeLovers.includes(person.name)){
     person['coffeeLover'] = true;
   } 
@@ -23,7 +24,7 @@ const addCoffeeLoverProperty = (person) => {
   return person;
 };
 
-const ageReducer = (acc, age) => acc + age;
+const ageReducer = (acc, age) => acc + age; //sums up age of people
 
 const coffeeLoversAbove18 = people.filter(person => ageAbove18(person)).map(person => addCoffeeLoverProperty(person));
 
